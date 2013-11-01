@@ -1,8 +1,5 @@
 <?php
 
-require_once 'classes/Item.php';
-require_once 'classes/Recipe.php';
-
 class ForgeHandler {
     public $useby;
 
