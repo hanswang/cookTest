@@ -52,7 +52,7 @@ class Recipe {
             if(is_array($ingreLoad) && count($ingreLoad) > 0) {
                 foreach ($ingreLoad as $ingre) {
                     $ingreObj = new Ingredient();
-                    if ($ingreObj->loadFromArray($ingre)) {
+                    if ($ingreObj->loadFromArray($ingre) && $ingreObj->validate()) {
                         $this->ingredients[] = $ingreObj;
                     } else {
                         return false;

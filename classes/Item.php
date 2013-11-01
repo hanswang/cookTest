@@ -39,6 +39,7 @@ class Item {
     }
 
     public function validate() {
+        // format check
         if (!in_array($this->unit, array('of', 'grams', 'ml', 'slices'))) {
             echo 'Malform of unit, invalid Item found : ' .json_encode($this);
             echo "\n";
@@ -50,6 +51,11 @@ class Item {
             return false;
         }
 
+        // functionality check
+        if ($this->useby < time()) {
+            // expired item
+            return false;
+        }
         return true;
     }
 }
